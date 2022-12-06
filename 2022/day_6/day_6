@@ -1,0 +1,13 @@
+from collections import deque
+f = open("2022/day_6/input.txt", "r")
+text = f.read()
+
+size = 14
+
+q = deque(maxlen=size)
+
+for i, char in enumerate(text):
+    if len(set(q)) == size:
+        print(i)
+        break
+    q.append(char)
